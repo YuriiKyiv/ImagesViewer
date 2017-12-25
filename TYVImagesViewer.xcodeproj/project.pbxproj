@@ -12,6 +12,10 @@
 		5A948E051FF1A501005BAF3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5A948E031FF1A501005BAF3F /* Main.storyboard */; };
 		5A948E081FF1A501005BAF3F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A948E071FF1A501005BAF3F /* main.m */; };
 		5A948E121FF1A82B005BAF3F /* TYVImagesLibraryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A948E111FF1A82B005BAF3F /* TYVImagesLibraryViewController.m */; };
+		5A948E1D1FF1AD1C005BAF3F /* TYVImagesLibraryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A948E1C1FF1AD1C005BAF3F /* TYVImagesLibraryView.m */; };
+		5A948E2B1FF1B15B005BAF3F /* TYVImagesLibraryItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A948E291FF1B15B005BAF3F /* TYVImagesLibraryItem.m */; };
+		5A948E321FF1B792005BAF3F /* TYVImagesLibraryItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A948E311FF1B792005BAF3F /* TYVImagesLibraryItem.xib */; };
+		5A948E351FF1B8A9005BAF3F /* TYVMacro.m in Sources */ = {isa = PBXBuildFile; fileRef = 5A948E341FF1B8A9005BAF3F /* TYVMacro.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,13 @@
 		5A948E091FF1A501005BAF3F /* TYVImagesViewer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TYVImagesViewer.entitlements; sourceTree = "<group>"; };
 		5A948E101FF1A82B005BAF3F /* TYVImagesLibraryViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYVImagesLibraryViewController.h; sourceTree = "<group>"; };
 		5A948E111FF1A82B005BAF3F /* TYVImagesLibraryViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYVImagesLibraryViewController.m; sourceTree = "<group>"; };
+		5A948E1B1FF1AD1C005BAF3F /* TYVImagesLibraryView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYVImagesLibraryView.h; sourceTree = "<group>"; };
+		5A948E1C1FF1AD1C005BAF3F /* TYVImagesLibraryView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYVImagesLibraryView.m; sourceTree = "<group>"; };
+		5A948E281FF1B15B005BAF3F /* TYVImagesLibraryItem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYVImagesLibraryItem.h; sourceTree = "<group>"; };
+		5A948E291FF1B15B005BAF3F /* TYVImagesLibraryItem.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYVImagesLibraryItem.m; sourceTree = "<group>"; };
+		5A948E311FF1B792005BAF3F /* TYVImagesLibraryItem.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TYVImagesLibraryItem.xib; sourceTree = "<group>"; };
+		5A948E331FF1B8A9005BAF3F /* TYVMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TYVMacro.h; sourceTree = "<group>"; };
+		5A948E341FF1B8A9005BAF3F /* TYVMacro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TYVMacro.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +68,7 @@
 		5A948DFA1FF1A501005BAF3F /* TYVImagesViewer */ = {
 			isa = PBXGroup;
 			children = (
+				5A948E201FF1AD93005BAF3F /* Library */,
 				5A948E141FF1A858005BAF3F /* ViewControllers */,
 				5A948DFB1FF1A501005BAF3F /* AppDelegate.h */,
 				5A948DFC1FF1A501005BAF3F /* AppDelegate.m */,
@@ -72,6 +84,7 @@
 		5A948E131FF1A830005BAF3F /* TYVImagesLibraryViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5A948E1E1FF1AD21005BAF3F /* Views */,
 				5A948E101FF1A82B005BAF3F /* TYVImagesLibraryViewController.h */,
 				5A948E111FF1A82B005BAF3F /* TYVImagesLibraryViewController.m */,
 			);
@@ -84,6 +97,51 @@
 				5A948E131FF1A830005BAF3F /* TYVImagesLibraryViewController */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5A948E181FF1AB63005BAF3F /* TYVImagesLibraryItem */ = {
+			isa = PBXGroup;
+			children = (
+				5A948E281FF1B15B005BAF3F /* TYVImagesLibraryItem.h */,
+				5A948E291FF1B15B005BAF3F /* TYVImagesLibraryItem.m */,
+				5A948E311FF1B792005BAF3F /* TYVImagesLibraryItem.xib */,
+			);
+			path = TYVImagesLibraryItem;
+			sourceTree = "<group>";
+		};
+		5A948E1E1FF1AD21005BAF3F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5A948E1F1FF1AD3F005BAF3F /* TYVImagesLibraryView */,
+				5A948E181FF1AB63005BAF3F /* TYVImagesLibraryItem */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5A948E1F1FF1AD3F005BAF3F /* TYVImagesLibraryView */ = {
+			isa = PBXGroup;
+			children = (
+				5A948E1B1FF1AD1C005BAF3F /* TYVImagesLibraryView.h */,
+				5A948E1C1FF1AD1C005BAF3F /* TYVImagesLibraryView.m */,
+			);
+			path = TYVImagesLibraryView;
+			sourceTree = "<group>";
+		};
+		5A948E201FF1AD93005BAF3F /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				5A948E331FF1B8A9005BAF3F /* TYVMacro.h */,
+				5A948E341FF1B8A9005BAF3F /* TYVMacro.m */,
+				5A948E211FF1ADA4005BAF3F /* Categories */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		5A948E211FF1ADA4005BAF3F /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A948E321FF1B792005BAF3F /* TYVImagesLibraryItem.xib in Resources */,
 				5A948E021FF1A501005BAF3F /* Assets.xcassets in Resources */,
 				5A948E051FF1A501005BAF3F /* Main.storyboard in Resources */,
 			);
@@ -156,9 +215,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A948E351FF1B8A9005BAF3F /* TYVMacro.m in Sources */,
 				5A948E121FF1A82B005BAF3F /* TYVImagesLibraryViewController.m in Sources */,
 				5A948E081FF1A501005BAF3F /* main.m in Sources */,
+				5A948E2B1FF1B15B005BAF3F /* TYVImagesLibraryItem.m in Sources */,
 				5A948DFD1FF1A501005BAF3F /* AppDelegate.m in Sources */,
+				5A948E1D1FF1AD1C005BAF3F /* TYVImagesLibraryView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

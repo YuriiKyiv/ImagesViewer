@@ -708,6 +708,45 @@
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVo-yz-McE">
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                                <clipView key="contentView" drawsBackground="NO" id="vGU-HV-tRP">
+                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView id="7wg-fV-rMy">
+                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="O0s-L3-3JV">
+                                                <size key="itemSize" width="100" height="100"/>
+                                                <edgeInsets key="sectionInset" left="10" right="10" top="0.0" bottom="0.0"/>
+                                            </collectionViewFlowLayout>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <outlet property="dataSource" destination="XfG-lQ-9wD" id="6yx-B4-MRn"/>
+                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="4Mq-gP-Hfv"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="teb-gd-kOg">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="aes-cN-2Pi">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="UVo-yz-McE" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="RYx-v9-Gjc"/>
+                            <constraint firstAttribute="trailing" secondItem="UVo-yz-McE" secondAttribute="trailing" id="d5z-EV-scg"/>
+                            <constraint firstItem="UVo-yz-McE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="tCZ-BB-Xhc"/>
+                            <constraint firstAttribute="bottom" secondItem="UVo-yz-McE" secondAttribute="bottom" id="yWh-Uh-rOk"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

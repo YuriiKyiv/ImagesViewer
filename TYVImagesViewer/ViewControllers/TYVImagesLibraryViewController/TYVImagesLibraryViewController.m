@@ -7,8 +7,13 @@
 //
 
 #import "TYVImagesLibraryViewController.h"
+#import "TYVImagesLibraryItem.h"
+#import "TYVImagesLibraryView.h"
+#import "TYVMacro.h"
 
-@interface TYVImagesLibraryViewController ()
+TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLibraryView)
+
+@interface TYVImagesLibraryViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate>
 
 @end
 
@@ -17,6 +22,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do view setup here.
+}
+
+#pragma mark - NSCollectionViewDataSource
+
+- (NSInteger)collectionView:(NSCollectionView *)collectionView
+     numberOfItemsInSection:(NSInteger)section
+{
+    return 25;
+}
+
+- (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView
+     itemForRepresentedObjectAtIndexPath:(NSIndexPath *)indexPath
+{
+    TYVImagesLibraryItem *item = [collectionView makeItemWithIdentifier:NSStringFromClass(TYVImagesLibraryItem.class)
+                                                           forIndexPath:indexPath];
+    
+    return item;
 }
 
 @end
