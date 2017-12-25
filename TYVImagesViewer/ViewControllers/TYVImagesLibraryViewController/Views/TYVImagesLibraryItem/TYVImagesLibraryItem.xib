@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="13771" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customView id="c22-O7-iKe">
+            <rect key="frame" x="0.0" y="0.0" width="816" height="612"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="H7l-L5-pMp">
+                    <rect key="frame" x="0.0" y="0.0" width="816" height="612"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="sample" id="CLa-HN-rAA"/>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="H7l-L5-pMp" secondAttribute="trailing" id="6zt-cl-4YD"/>
+                <constraint firstItem="H7l-L5-pMp" firstAttribute="leading" secondItem="c22-O7-iKe" secondAttribute="leading" id="NEE-2q-9AK"/>
+                <constraint firstItem="H7l-L5-pMp" firstAttribute="top" secondItem="c22-O7-iKe" secondAttribute="top" id="YfF-8D-P8Z"/>
+                <constraint firstAttribute="bottom" secondItem="H7l-L5-pMp" secondAttribute="bottom" id="mdR-2z-Nxl"/>
+            </constraints>
+            <point key="canvasLocation" x="32" y="56.5"/>
+        </customView>
+        <collectionViewItem id="FQL-mB-AT9" customClass="TYVImagesLibraryItem">
+            <connections>
+                <outlet property="view" destination="c22-O7-iKe" id="1DQ-qt-hLF"/>
+            </connections>
+        </collectionViewItem>
+    </objects>
+    <resources>
+        <image name="sample" width="816" height="612"/>
+    </resources>
+</document>
