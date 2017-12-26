@@ -705,7 +705,7 @@
         <scene sceneID="hIz-AP-VOD">
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TYVImagesLibraryViewController" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
+                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="TYVImagesLibraryView">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -747,6 +747,9 @@
                             <constraint firstItem="UVo-yz-McE" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="tCZ-BB-Xhc"/>
                             <constraint firstAttribute="bottom" secondItem="UVo-yz-McE" secondAttribute="bottom" id="yWh-Uh-rOk"/>
                         </constraints>
+                        <connections>
+                            <outlet property="contentCollectionView" destination="7wg-fV-rMy" id="tEX-sL-XKF"/>
+                        </connections>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

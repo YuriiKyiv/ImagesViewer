@@ -1,5 +1,5 @@
 //
-//  TYVImagesLibraryItem.h
+//  TYVImageModel.m
 //  TYVImagesViewer
 //
 //  Created by Yurii Trokhymchuk on 26.12.17.
@@ -9,10 +9,10 @@
 #import <Cocoa/Cocoa.h>
 #import "TYVImageModel.h"
 
-@interface TYVImagesLibraryItem : NSCollectionViewItem
+@implementation TYVImageModel
 
-@property (weak) IBOutlet NSImageView *contentImageView;
-
-- (void)fillWithModel:(TYVImageModel *)model;
+- (NSImage *)image {
+    return [NSImage imageNamed:@"sample"];
+}
 
 @end

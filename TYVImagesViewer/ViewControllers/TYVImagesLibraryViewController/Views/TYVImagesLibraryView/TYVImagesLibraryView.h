@@ -10,4 +10,6 @@
 
 @interface TYVImagesLibraryView : NSView
 
+@property (weak) IBOutlet NSCollectionView *contentCollectionView;
+
 @end
