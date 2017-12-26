@@ -8,6 +8,9 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class TYVImagesLibraryModel;
+
 @interface TYVImagesLibraryViewController : NSViewController
+@property (nonatomic, strong)   TYVImagesLibraryModel *model;
 
 @end
