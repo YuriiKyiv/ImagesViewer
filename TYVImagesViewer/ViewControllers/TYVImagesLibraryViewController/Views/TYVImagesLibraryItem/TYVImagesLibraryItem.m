@@ -25,9 +25,12 @@
 
 - (void)fillWithModel:(TYVImageModel *)model {
     TYVWeakify(self);
-    [model getImageWithBlock:^(NSImage *image) {
+    TYVImageModelToken oldToken = model.token;
+    [model getImageWithBlock:^(NSImage *image, TYVImageModelToken token) {
         TYVStrongify(self);
-        self.contentImageView.image = image;
+        if ([oldToken isEqualToString:token]) {
+            self.contentImageView.image = image;
+        }
     }];
 }
 

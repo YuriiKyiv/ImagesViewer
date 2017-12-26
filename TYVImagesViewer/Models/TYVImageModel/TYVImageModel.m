@@ -16,6 +16,7 @@
 @end
 
 @implementation TYVImageModel
+@dynamic token;
 
 #pragma mark - Class
 
@@ -34,17 +35,24 @@
     return self;
 }
 
+#pragma mark - Accessors
+
+- (TYVImageModelToken)token {
+    return self.url.absoluteString;
+}
+
 #pragma mark - Public
 
 - (void)getImageWithBlock:(TYVImageModelCompletion)completinBlock {
     if (_image != nil) {
-        completinBlock(_image);
+        completinBlock(_image, self.token);
     } else {
         NSURL *url = self.url;
+        TYVImageModelToken token = self.token;
         dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
             NSImage *image = [[NSImage alloc] initWithContentsOfURL:url];
             dispatch_async(dispatch_get_main_queue(), ^{
-                completinBlock(image);
+                completinBlock(image, token);
             });
         });
     }
