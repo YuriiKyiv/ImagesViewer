@@ -7,9 +7,10 @@
 //
 
 #import <Cocoa/Cocoa.h>
-
+\
 @interface TYVImagesLibraryView : NSView
-
 @property (weak) IBOutlet NSCollectionView *contentCollectionView;
+
+- (void)configure;
 
 @end

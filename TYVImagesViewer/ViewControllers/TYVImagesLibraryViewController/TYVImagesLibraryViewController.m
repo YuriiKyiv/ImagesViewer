@@ -26,15 +26,17 @@ TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLib
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    [self configurate];
+    [self configure];
 }
 
 #pragma mark - Private
 
-- (void)configurate {
+- (void)configure {
     NSString *key = NSStringFromClass(TYVImagesLibraryItem.class);
     NSNib *nib = [[NSNib alloc] initWithNibNamed:key bundle:nil];
     [self.rootView.contentCollectionView registerNib:nib forItemWithIdentifier:key];
+    
+    [self.rootView configure];
     
     NSMutableArray *models = [NSMutableArray new];
     for (int i = 0; i < 50; i++) {
