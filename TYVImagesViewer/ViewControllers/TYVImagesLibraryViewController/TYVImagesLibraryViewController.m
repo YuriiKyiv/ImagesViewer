@@ -10,12 +10,12 @@
 #import "TYVImagesLibraryItem.h"
 #import "TYVImagesLibraryView.h"
 #import "TYVImageModel.h"
+#import "TYVImagesLibraryModel.h"
 #import "TYVMacro.h"
 
 TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLibraryView)
 
-@interface TYVImagesLibraryViewController () <NSCollectionViewDataSource, NSCollectionViewDelegate>
-@property (nonatomic, strong)   NSArray<TYVImageModel *> *models;
+@interface TYVImagesLibraryViewController () <TYVImagesLibraryViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegate>
 
 @end
 
@@ -29,6 +29,15 @@ TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLib
     [self configure];
 }
 
+#pragma mark - Accessors
+
+- (void)setModel:(TYVImagesLibraryModel *)model {
+    if (_model != model) {
+        _model = model;
+        [self.rootView.contentCollectionView reloadData];
+    }
+}
+
 #pragma mark - Private
 
 - (void)configure {
@@ -37,14 +46,7 @@ TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLib
     [self.rootView.contentCollectionView registerNib:nib forItemWithIdentifier:key];
     
     [self.rootView configure];
-    
-    NSMutableArray *models = [NSMutableArray new];
-    for (int i = 0; i < 50; i++) {
-        TYVImageModel *model = [TYVImageModel new];
-        [models addObject:model];
-    }
-    
-    self.models = [models copy];
+    self.rootView.delegate = self;
 }
 
 #pragma mark - NSCollectionViewDataSource
@@ -52,7 +54,7 @@ TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLib
 - (NSInteger)collectionView:(NSCollectionView *)collectionView
      numberOfItemsInSection:(NSInteger)section
 {
-    return self.models.count;
+    return self.model.count;
 }
 
 - (NSCollectionViewItem *)collectionView:(NSCollectionView *)collectionView
@@ -60,9 +62,20 @@ TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLib
 {
     TYVImagesLibraryItem *item = [collectionView makeItemWithIdentifier:NSStringFromClass(TYVImagesLibraryItem.class)
                                                            forIndexPath:indexPath];
-    [item fillWithModel:self.models[indexPath.item]];
+    
+    [item fillWithModel:[self.model imageAtIndex:indexPath.item]];
     
     return item;
+}
+
+#pragma mark - TYVImagesLibraryViewDelegate
+
+- (void)insertImagesWithURLs:(NSArray<NSURL *> *)urls atPoint:(CGPoint)point indexPath:(NSIndexPath *)indexPath {
+    for (NSURL *url in urls) {
+        NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:0];
+        [self.model insertImageWithURL:url atIndex:0];
+        [self.rootView.contentCollectionView insertItemsAtIndexPaths:[NSSet setWithArray:@[path]]];
+    }
 }
 
 @end
