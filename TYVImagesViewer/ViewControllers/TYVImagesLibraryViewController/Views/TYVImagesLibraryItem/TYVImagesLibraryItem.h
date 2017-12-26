@@ -7,11 +7,18 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "TYVImageModel.h"
+
+@class TYVImageModel;
+
+@protocol TYVImagesLibraryItemObserver <NSObject>
+@optional
+- (void)doDoubleClick:(TYVImageModel *)model;
+
+@end
 
 @interface TYVImagesLibraryItem : NSCollectionViewItem
-
 @property (weak) IBOutlet NSImageView *contentImageView;
+@property (nonatomic, weak) id<TYVImagesLibraryItemObserver>    observer;
 
 - (void)fillWithModel:(TYVImageModel *)model;
 
