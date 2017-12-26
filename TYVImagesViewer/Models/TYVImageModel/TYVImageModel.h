@@ -10,5 +10,9 @@
 
 @interface TYVImageModel : NSObject
 @property (readonly) NSImage    *image;
+@property (readonly) NSURL      *url;
+
++ (instancetype)modelWithURL:(NSURL *)url;
+- (instancetype)initWithURL:(NSURL *)url;
 
 @end
