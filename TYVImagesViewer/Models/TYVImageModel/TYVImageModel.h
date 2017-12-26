@@ -12,13 +12,15 @@ typedef NSString* TYVImageModelToken;
 typedef void(^TYVImageModelCompletion)(NSImage *image, TYVImageModelToken token);
 
 @interface TYVImageModel : NSObject
-@property (readonly) NSImage    *image;
 @property (readonly) NSURL      *url;
 
 @property (readonly) TYVImageModelToken token;
 
 + (instancetype)modelWithURL:(NSURL *)url;
 - (instancetype)initWithURL:(NSURL *)url;
+
++ (instancetype)modelWithImageName:(NSString *)imageName;
+- (instancetype)initWithImageName:(NSString *)imageName;
 
 - (void)getImageWithBlock:(TYVImageModelCompletion)completinBlock;
 
