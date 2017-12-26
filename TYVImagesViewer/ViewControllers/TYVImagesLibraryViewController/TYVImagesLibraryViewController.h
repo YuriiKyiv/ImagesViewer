@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  TYVImagesLibraryViewController.h
 //  TYVImagesViewer
 //
 //  Created by Yurii Trokhymchuk on 25.12.17.
@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
-
+@interface TYVImagesLibraryViewController : NSViewController
 
 @end
-
