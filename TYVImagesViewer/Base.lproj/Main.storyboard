@@ -725,7 +725,6 @@
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="XfG-lQ-9wD" id="6yx-B4-MRn"/>
-                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="4Mq-gP-Hfv"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>
