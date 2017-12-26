@@ -7,6 +7,7 @@
 //
 
 #import "TYVImagesLibraryItem.h"
+#import "TYVMacro.h"
 
 @interface TYVImagesLibraryItem ()
 
@@ -18,7 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do view setup here.
+}
+
+#pragma mark - Public
+
+- (void)fillWithModel:(TYVImageModel *)model {
+    TYVWeakify(self);
+    [model getImageWithBlock:^(NSImage *image) {
+        TYVStrongify(self);
+        self.contentImageView.image = image;
+    }];
 }
 
 #pragma mark - NSCollectionViewElement
@@ -27,12 +37,6 @@
     [super prepareForReuse];
     
     self.contentImageView.image = nil;
-}
-
-#pragma mark - Public
-
-- (void)fillWithModel:(TYVImageModel *)model {
-    self.contentImageView.image = model.image;
 }
 
 @end

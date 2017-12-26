@@ -10,6 +10,7 @@
 #import "TYVImageModel.h"
 
 @interface TYVImageModel ()
+@property (nonatomic, strong)   NSImage *image;
 @property (nonatomic, strong)   NSURL   *url;
 
 @end
@@ -33,10 +34,20 @@
     return self;
 }
 
-#pragma mark - Accessors
+#pragma mark - Public
 
-- (NSImage *)image {
-    return [NSImage imageNamed:@"sample"];
+- (void)getImageWithBlock:(TYVImageModelCompletion)completinBlock {
+    if (_image != nil) {
+        completinBlock(_image);
+    } else {
+        NSURL *url = self.url;
+        dispatch_async(dispatch_get_global_queue(QOS_CLASS_DEFAULT, 0), ^{
+            NSImage *image = [[NSImage alloc] initWithContentsOfURL:url];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                completinBlock(image);
+            });
+        });
+    }
 }
 
 @end
