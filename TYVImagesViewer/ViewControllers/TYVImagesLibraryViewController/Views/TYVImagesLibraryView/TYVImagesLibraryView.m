@@ -48,13 +48,18 @@
 - (BOOL)prepareForDragOperation:(id <NSDraggingInfo>)sender {
     return [self shouldAllowDrag:sender];
 }
-\
+
 - (BOOL)performDragOperation:(id <NSDraggingInfo>)sender {
     NSPasteboard *pasteBoard = sender.draggingPasteboard;
     CGPoint point = [self convertPoint:sender.draggingLocation fromView:nil];
+    NSIndexPath *indexPath = [self.contentCollectionView indexPathForItemAtPoint:point];
     NSArray *urls = [pasteBoard readObjectsForClasses:@[NSURL.class] options:self.filteringOptions];
-    
-    return urls.count > 0;
+    if (urls.count > 0) {
+        [self.delegate insertImagesWithURLs:urls atPoint:point indexPath:indexPath];
+        return YES;
+    } else {
+        return NO;
+    }
 }
 
 #pragma mark - Private
@@ -71,3 +76,4 @@
 }
 
 @end
+
