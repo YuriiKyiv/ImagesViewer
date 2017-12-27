@@ -9,6 +9,7 @@
 #import <Cocoa/Cocoa.h>
 
 @class TYVDetailImageViewController;
+@class TYVDetailImageViewModel;
 
 @protocol TYVDetailImageViewControllerDelegate
 - (void)didPressOnEsc:(TYVDetailImageViewController *)controller;
@@ -16,6 +17,8 @@
 @end
 
 @interface TYVDetailImageViewController : NSViewController
+@property (nonatomic, strong) TYVDetailImageViewModel *model;
+
 @property (nonatomic, weak) id<TYVDetailImageViewControllerDelegate> delegate;
 
 @end
