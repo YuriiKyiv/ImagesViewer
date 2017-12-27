@@ -21,6 +21,7 @@
 		5AB1757F1FF2D0B5001D1B5C /* TYVImagesLibraryWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1757E1FF2D0B5001D1B5C /* TYVImagesLibraryWindowController.m */; };
 		5AB175891FF305C0001D1B5C /* TYVDetailImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB175881FF305C0001D1B5C /* TYVDetailImageViewController.m */; };
 		5AB1758D1FF3115C001D1B5C /* TYVDetailImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB1758C1FF3115C001D1B5C /* TYVDetailImageView.m */; };
+		5AB175911FF3A16D001D1B5C /* TYVDetailImageViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AB175901FF3A16D001D1B5C /* TYVDetailImageViewModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,8 @@
 		5AB175881FF305C0001D1B5C /* TYVDetailImageViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYVDetailImageViewController.m; sourceTree = "<group>"; };
 		5AB1758B1FF3115C001D1B5C /* TYVDetailImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYVDetailImageView.h; sourceTree = "<group>"; };
 		5AB1758C1FF3115C001D1B5C /* TYVDetailImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYVDetailImageView.m; sourceTree = "<group>"; };
+		5AB1758F1FF3A16D001D1B5C /* TYVDetailImageViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TYVDetailImageViewModel.h; sourceTree = "<group>"; };
+		5AB175901FF3A16D001D1B5C /* TYVDetailImageViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TYVDetailImageViewModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +212,7 @@
 		5AB1758A1FF305C3001D1B5C /* TYVDetailImageViewController */ = {
 			isa = PBXGroup;
 			children = (
+				5AB175931FF3A175001D1B5C /* ViewModel */,
 				5AB1758E1FF3116D001D1B5C /* View */,
 				5AB175871FF305C0001D1B5C /* TYVDetailImageViewController.h */,
 				5AB175881FF305C0001D1B5C /* TYVDetailImageViewController.m */,
@@ -223,6 +227,23 @@
 				5AB1758C1FF3115C001D1B5C /* TYVDetailImageView.m */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		5AB175921FF3A170001D1B5C /* TYVDetailImageViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5AB1758F1FF3A16D001D1B5C /* TYVDetailImageViewModel.h */,
+				5AB175901FF3A16D001D1B5C /* TYVDetailImageViewModel.m */,
+			);
+			path = TYVDetailImageViewModel;
+			sourceTree = "<group>";
+		};
+		5AB175931FF3A175001D1B5C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5AB175921FF3A170001D1B5C /* TYVDetailImageViewModel */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +326,7 @@
 				5AB1758D1FF3115C001D1B5C /* TYVDetailImageView.m in Sources */,
 				5A948E2B1FF1B15B005BAF3F /* TYVImagesLibraryItem.m in Sources */,
 				5AB1757F1FF2D0B5001D1B5C /* TYVImagesLibraryWindowController.m in Sources */,
+				5AB175911FF3A16D001D1B5C /* TYVDetailImageViewModel.m in Sources */,
 				5A948DFD1FF1A501005BAF3F /* AppDelegate.m in Sources */,
 				5A948E1D1FF1AD1C005BAF3F /* TYVImagesLibraryView.m in Sources */,
 			);
