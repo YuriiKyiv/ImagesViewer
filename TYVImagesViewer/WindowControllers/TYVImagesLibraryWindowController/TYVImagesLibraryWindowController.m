@@ -11,10 +11,14 @@
 #import "TYVImageModel.h"
 #import "TYVImagesLibraryModel.h"
 #import "TYVDetailImageViewController.h"
+#import "TYVDetailImageViewModel.h"
 
 @interface TYVImagesLibraryWindowController () <TYVImagesLibraryViewControllerDelegate, TYVDetailImageViewControllerDelegate>
 @property (nonatomic, strong) TYVDetailImageViewController      *detailController;
 @property (nonatomic, strong) TYVImagesLibraryViewController    *libraryController;
+
+@property (nonatomic, strong) TYVDetailImageViewModel   *detilViewModel;
+
 @end
 
 @implementation TYVImagesLibraryWindowController
@@ -46,19 +50,30 @@
     controller.delegate = self;
     TYVImagesLibraryModel *model = [TYVImagesLibraryModel new];
     
-    for (int i = 0; i < 50; i++) {
+    for (int i = 0; i < 10; i++) {
         TYVImageModel *image = [TYVImageModel modelWithImageName:@"sample"];
         [model insertImageModel:image atIndex:i];
     }
-    
+
     controller.model = model;
+    
+    TYVDetailImageViewModel *viewModel = [[TYVDetailImageViewModel alloc]
+                                          initWithLibraryModel:model selectedModel:nil];
+    self.detilViewModel = viewModel;
+    [self configureDetailViewControllerWithViewModel:viewModel];
+}
+
+- (void)configureDetailViewControllerWithViewModel:(TYVDetailImageViewModel *)viewModel {
+    TYVDetailImageViewController *detailController = self.detailController;
+    detailController.model = viewModel;
+    detailController.delegate = self;
 }
 
 #pragma mark - TYVImagesLibraryViewControllerDelegate
 
 - (void)showDetailImageWithModel:(TYVImageModel *)model {
+    self.detilViewModel.selectedModel = model;
     TYVDetailImageViewController *detailController = self.detailController;
-    detailController.delegate = self;
     detailController.view.frame = self.contentViewController.view.frame;
     self.contentViewController = detailController;
 }
