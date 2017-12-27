@@ -17,15 +17,19 @@
 
 @end
 
-@protocol TYVDetailImageViewDelegate
+@protocol TYVDetailImageViewDelegate <NSObject>
 - (void)didPressOnEsc:(TYVDetailImageView *)view;
 
 @optional
-- (void)didPressOnBlur:(TYVImageModel *)mdel;
+- (void)didPressOnBlur:(TYVImageModel *)model;
 
 @end
 
 @interface TYVDetailImageView : NSView
+@property (weak) IBOutlet NSImageView *contentImageView;
+
+@property (nonatomic, strong) TYVImageModel  *seletedImageModel;
+
 @property (nonatomic, weak) id<TYVDetailImageViewDataSource>    dataSource;
 @property (nonatomic, weak) id<TYVDetailImageViewDelegate>      delegate;
 

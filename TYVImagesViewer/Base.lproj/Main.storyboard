@@ -777,6 +777,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="onUp:" target="CXE-ZN-OJ3" id="VLs-fD-AxY"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bj2-Ib-6hV">
                                         <rect key="frame" x="8" y="30" width="65" height="32"/>
@@ -784,6 +787,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="onBlur:" target="CXE-ZN-OJ3" id="Zkr-6v-oDh"/>
+                                        </connections>
                                     </button>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lD0-mb-JQa">
                                         <rect key="frame" x="3" y="-7" width="75" height="32"/>
@@ -791,6 +797,9 @@
                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
                                         </buttonCell>
+                                        <connections>
+                                            <action selector="onDown:" target="CXE-ZN-OJ3" id="n7t-mS-arp"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -818,6 +827,9 @@
                             <constraint firstAttribute="bottom" secondItem="nZP-gD-aXg" secondAttribute="bottom" constant="16" id="jiA-z6-Mhw"/>
                             <constraint firstItem="Fau-rf-KGW" firstAttribute="centerY" secondItem="CXE-ZN-OJ3" secondAttribute="centerY" id="s69-1b-GPM"/>
                         </constraints>
+                        <connections>
+                            <outlet property="contentImageView" destination="nZP-gD-aXg" id="8g7-pC-VDT"/>
+                        </connections>
                     </view>
                 </viewController>
                 <customObject id="QlC-nb-Evv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
