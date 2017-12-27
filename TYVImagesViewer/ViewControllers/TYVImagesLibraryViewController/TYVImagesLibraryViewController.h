@@ -9,8 +9,15 @@
 #import <Cocoa/Cocoa.h>
 
 @class TYVImagesLibraryModel;
+@class TYVImageModel;
+
+@protocol TYVImagesLibraryViewControllerDelegate
+- (void)showDetailImageWithModel:(TYVImageModel *)model;
+
+@end
 
 @interface TYVImagesLibraryViewController : NSViewController
 @property (nonatomic, strong)   TYVImagesLibraryModel *model;
+@property (nonatomic, weak) id<TYVImagesLibraryViewControllerDelegate>  delegate;
 
 @end

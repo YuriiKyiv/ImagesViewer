@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="13771"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+        <capability name="stacking Non-gravity area distributions on NSStackView" minToolsVersion="7.0" minSystemVersion="10.11"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -725,7 +726,6 @@
                                             <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             <connections>
                                                 <outlet property="dataSource" destination="XfG-lQ-9wD" id="6yx-B4-MRn"/>
-                                                <outlet property="delegate" destination="XfG-lQ-9wD" id="4Mq-gP-Hfv"/>
                                             </connections>
                                         </collectionView>
                                     </subviews>
@@ -755,6 +755,86 @@
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="655"/>
+        </scene>
+        <!--Detail Image View Controller-->
+        <scene sceneID="5mA-u5-rRx">
+            <objects>
+                <viewController storyboardIdentifier="TYVDetailImageViewController" id="9M9-Zq-8Rh" customClass="TYVDetailImageViewController" sceneMemberID="viewController">
+                    <view key="view" id="CXE-ZN-OJ3" customClass="TYVDetailImageView">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="238"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZP-gD-aXg">
+                                <rect key="frame" x="16" y="16" width="322" height="206"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="fDI-UF-ctL"/>
+                            </imageView>
+                            <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fau-rf-KGW">
+                                <rect key="frame" x="354" y="72" width="80" height="95"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D0z-wl-Yqs">
+                                        <rect key="frame" x="11" y="67" width="58" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Up" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QRI-Tr-b26">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onUp:" target="CXE-ZN-OJ3" id="VLs-fD-AxY"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bj2-Ib-6hV">
+                                        <rect key="frame" x="8" y="30" width="65" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Blur" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="IQ8-2b-saJ">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onBlur:" target="CXE-ZN-OJ3" id="Zkr-6v-oDh"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="lD0-mb-JQa">
+                                        <rect key="frame" x="3" y="-7" width="75" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Down" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="vJs-tR-M9S">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="onDown:" target="CXE-ZN-OJ3" id="n7t-mS-arp"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="FJ0-p6-XNy"/>
+                                </constraints>
+                                <visibilityPriorities>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                    <integer value="1000"/>
+                                </visibilityPriorities>
+                                <customSpacing>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                    <real value="3.4028234663852886e+38"/>
+                                </customSpacing>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="nZP-gD-aXg" firstAttribute="leading" secondItem="CXE-ZN-OJ3" secondAttribute="leading" constant="16" id="9wM-ql-K7q"/>
+                            <constraint firstItem="Fau-rf-KGW" firstAttribute="leading" secondItem="nZP-gD-aXg" secondAttribute="trailing" constant="16" id="Fnu-X5-DgN"/>
+                            <constraint firstAttribute="trailing" secondItem="Fau-rf-KGW" secondAttribute="trailing" constant="16" id="Hmv-Cn-tHf"/>
+                            <constraint firstItem="Fau-rf-KGW" firstAttribute="top" relation="greaterThanOrEqual" secondItem="CXE-ZN-OJ3" secondAttribute="top" constant="16" id="WuM-lG-EAf"/>
+                            <constraint firstItem="nZP-gD-aXg" firstAttribute="top" secondItem="CXE-ZN-OJ3" secondAttribute="top" constant="16" id="XSG-Tx-Ff4"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Fau-rf-KGW" secondAttribute="bottom" constant="16" id="hbL-br-UuA"/>
+                            <constraint firstAttribute="bottom" secondItem="nZP-gD-aXg" secondAttribute="bottom" constant="16" id="jiA-z6-Mhw"/>
+                            <constraint firstItem="Fau-rf-KGW" firstAttribute="centerY" secondItem="CXE-ZN-OJ3" secondAttribute="centerY" id="s69-1b-GPM"/>
+                        </constraints>
+                        <connections>
+                            <outlet property="contentImageView" destination="nZP-gD-aXg" id="8g7-pC-VDT"/>
+                        </connections>
+                    </view>
+                </viewController>
+                <customObject id="QlC-nb-Evv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152" y="1120"/>
         </scene>
     </scenes>
 </document>

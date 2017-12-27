@@ -58,4 +58,8 @@
     return self.images[index];
 }
 
+- (NSUInteger)indexForModel:(TYVImageModel *)model {
+    return [self.images indexOfObject:model];
+}
+
 @end

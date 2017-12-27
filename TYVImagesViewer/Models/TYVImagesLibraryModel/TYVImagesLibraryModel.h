@@ -18,5 +18,6 @@
 - (void)insertImageWithURL:(NSURL *)url atIndex:(NSUInteger)index;
 - (void)insertImageModel:(TYVImageModel *)model atIndex:(NSUInteger)index;
 - (TYVImageModel *)imageAtIndex:(NSUInteger)index;
+- (NSUInteger)indexForModel:(TYVImageModel *)model;
 
 @end

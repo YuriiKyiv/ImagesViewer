@@ -15,7 +15,7 @@
 
 TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLibraryView)
 
-@interface TYVImagesLibraryViewController () <TYVImagesLibraryViewDelegate, NSCollectionViewDataSource, NSCollectionViewDelegate>
+@interface TYVImagesLibraryViewController () <TYVImagesLibraryViewDelegate, NSCollectionViewDataSource, TYVImagesLibraryItemObserver>
 
 @end
 
@@ -64,6 +64,7 @@ TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLib
                                                            forIndexPath:indexPath];
     
     [item fillWithModel:[self.model imageAtIndex:indexPath.item]];
+    item.observer = self;
     
     return item;
 }
@@ -76,6 +77,12 @@ TYVViewControllerProperty(TYVImagesLibraryViewController, rootView, TYVImagesLib
         [self.model insertImageWithURL:url atIndex:0];
         [self.rootView.contentCollectionView insertItemsAtIndexPaths:[NSSet setWithArray:@[path]]];
     }
+}
+
+#pragma mark - TYVImagesLibraryItemObserver
+
+- (void)doDoubleClick:(TYVImageModel *)model {
+    [self.delegate showDetailImageWithModel:model];
 }
 
 @end
