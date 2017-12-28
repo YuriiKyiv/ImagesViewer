@@ -707,17 +707,17 @@
             <objects>
                 <viewController id="XfG-lQ-9wD" customClass="TYVImagesLibraryViewController" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl" customClass="TYVImagesLibraryView">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="520" height="420"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVo-yz-McE">
-                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                            <scrollView wantsLayer="YES" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UVo-yz-McE">
+                                <rect key="frame" x="0.0" y="0.0" width="520" height="420"/>
                                 <clipView key="contentView" drawsBackground="NO" id="vGU-HV-tRP">
-                                    <rect key="frame" x="1" y="1" width="478" height="268"/>
+                                    <rect key="frame" x="1" y="1" width="518" height="418"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <collectionView id="7wg-fV-rMy">
-                                            <rect key="frame" x="0.0" y="0.0" width="478" height="158"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="518" height="418"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" minimumInteritemSpacing="10" minimumLineSpacing="10" id="O0s-L3-3JV">
                                                 <size key="itemSize" width="100" height="100"/>
@@ -731,11 +731,15 @@
                                     </subviews>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="260" id="OVR-vD-VmD"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="210" id="o0c-p9-qfD"/>
+                                </constraints>
                                 <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="teb-gd-kOg">
-                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <rect key="frame" x="-100" y="-100" width="233" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="aes-cN-2Pi">
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="NO" id="aes-cN-2Pi">
                                     <rect key="frame" x="234" y="1" width="15" height="143"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
@@ -761,15 +765,15 @@
             <objects>
                 <viewController storyboardIdentifier="TYVDetailImageViewController" id="9M9-Zq-8Rh" customClass="TYVDetailImageViewController" sceneMemberID="viewController">
                     <view key="view" id="CXE-ZN-OJ3" customClass="TYVDetailImageView">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="238"/>
+                        <rect key="frame" x="0.0" y="0.0" width="520" height="420"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZP-gD-aXg">
-                                <rect key="frame" x="16" y="16" width="322" height="206"/>
+                                <rect key="frame" x="16" y="16" width="392" height="388"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="fDI-UF-ctL"/>
                             </imageView>
                             <stackView distribution="fillEqually" orientation="vertical" alignment="centerX" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fau-rf-KGW">
-                                <rect key="frame" x="354" y="72" width="80" height="95"/>
+                                <rect key="frame" x="424" y="163" width="80" height="95"/>
                                 <subviews>
                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="D0z-wl-Yqs">
                                         <rect key="frame" x="11" y="67" width="58" height="32"/>
@@ -834,7 +838,7 @@
                 </viewController>
                 <customObject id="QlC-nb-Evv" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-152" y="1120"/>
+            <point key="canvasLocation" x="-219" y="1133"/>
         </scene>
     </scenes>
 </document>
